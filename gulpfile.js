@@ -24,6 +24,14 @@ gulp.task('browserify', function () {
 		.pipe(gulp.dest('app/js/'));
 });
 
+// gulp.task('App-uglify', function() {
+// 	return gulp.src(
+// 		"app/js/App.js"
+// 		)
+// 		.pipe(uglify()) //Minify main.js
+// 		.pipe(gulp.dest('app/js/'));
+// });
+
 
 gulp.task('browser-sync', ['libs', 'styles', 'scripts','browserify'], function() {
 		browserSync.init({
