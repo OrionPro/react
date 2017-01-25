@@ -1,0 +1,148 @@
+@import "bourbon"
+@import "vars.sass"
+@import "sprite/sprite.sass"
+
+// loads Libs SASS
+@import "app/libs/animate/animate.sass"
+@import "app/libs/owl.carousel/assets/owl.carousel.sass"
+@import "../app/libs/FontAwesome/font-awesome.min"
+@import "../app/libs/slidebars/slidebars.min"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+// Оформление слайдбара
+[off-canvas]
+	transition: transform 0.4s
+	overflow: auto
+	-webkit-overflow-scrolling: touch
+[off-canvas*=left]
+	width: 250px
+[canvas=container]
+	background-color: transparent
+nav[canvas]
+	position: fixed	
+	top: 20px
+	left: 20px
+	display: none
+	z-index: 100
+[class*=js-open-], [class*=js-toggle-], [class*=js-close-]
+	cursor: pointer
+[off-canvas]
+	ul
+		&.menu
+			margin: 0
+			padding: 0
+			display: block
+			list-style: none
+
+
+
+// Секция our_advantages
+.our_advantages
+	min-height: 630px
+	background-color: #fff
+	h2
+		margin-top: 75px
+		color: #626262
+		text-align: center
+		font-size: 35px
+	.our_advantages_item
+		margin-bottom: 55px
+		h3
+			font-size: 27px
+			text-align: center
+		p
+			margin-top: 15px
+			font-size: 22px
+			line-height: 1.2
+			text-align: center
+		.our_advantages_item_img
+			text-align: center
+			i
+				font-size: 72px
+				color: #00b6f4
+// Секция main_content
+.main_content
+	text-align: center 
+// Секция 
+.intermediate
+	text-align: center
+	min-height: 300px
+	background-color: #00b6f4
+	.intermediate_title
+		max-width: 650px
+		margin: auto		
+		color: #052243
+		h3
+			margin: 30px 30px
+			text-transform: uppercase
+			font-size: 24px
+			color: #052243
+			
+			
+
+	.intermediate_wrap
+		margin-top: 40px
+		form
+		.intermediate_item
+			display: inline-block
+			input
+				width: 100%
+				display: inline-block	
+				border: 1px solid #a2b6c9
+				background: #fff
+				color: #43637f
+				height: 40px
+				margin: 0 10px
+				padding: 0 0 0 9px
+				&::-webkit-input-placeholder
+					color: #43637f
+				&:-moz-placeholder
+					color: #43637f
+				&::-moz-placeholder
+					color: #43637f
+				&:-ms-input-placeholder
+					color: #43637f
+			input[type=submit]
+				background: #052243
+				color: #fff
+	
+//	Секция 
+//	Секция
+//	Секция
+//	Секция 
+//	Секция 
+//	Секция
+//	Секция
+
+
+// Секия footer 
+.footer
+	background-color: #333
+	height: 200px
+	flex: 0 0 auto	
+
+
+//ALWAYS END
+@import "media"
+
