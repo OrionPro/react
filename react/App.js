@@ -21,7 +21,7 @@ class App extends Component {
 		//this.state = {count: this.props.json}
 		this.state = {count: json};
 		this.filter = this.filter.bind(this);
-		this.showMore = this.filter.bind(this);
+		this.showMore = this.showMore.bind(this);
 	}
 
 	componentDidMount() {
@@ -37,14 +37,12 @@ class App extends Component {
 		})
 	}
 
-	showMore() {
-		console.log(json.length)
-		json.map((el)=> {
+	showMore(event) {
 
-		})
 	}
 
 	filter(event) {
+
 		var btn = event.target,
 			limit = 0,
 			value = btn.value;
