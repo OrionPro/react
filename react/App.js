@@ -13,6 +13,12 @@ class Template extends Component {
 	}
 }
 
+// class MoreElem extends Component{
+// 	render(){
+// 		return()
+// 	}
+// }
+
 class App extends Component {
 
 
@@ -20,6 +26,7 @@ class App extends Component {
 		super(props);
 		//this.state = {count: this.props.json}
 		this.state = {count: json};
+		this.more = {elem: []};
 		this.filter = this.filter.bind(this);
 		this.showMore = this.showMore.bind(this);
 	}
@@ -37,15 +44,31 @@ class App extends Component {
 		})
 	}
 
-	showMore(event) {
+	showMore() {
+		var res = [];
+
+		// res.push(this.state.count);
+		// res.push(this.more.elem);
+		// res.map(el=>{
+		// 	console.log(el);
+		//
+		// })
+		this.more.elem.map(el =>{
+			res.push(el)
+		});
+		this.setState({
+			count: this.state.count.concat(res)
+		});
 
 	}
+	
 
 	filter(event) {
-
 		var btn = event.target,
 			limit = 0,
-			value = btn.value;
+			value = btn.value,
+			more = this.more.elem;
+			
 		var filterElem = json.filter(function (el) {
 			var filterElem = el.category;
 			if (value == filterElem) {
@@ -53,13 +76,14 @@ class App extends Component {
 					limit++;
 					return el
 				}
+				more.push(el);
 			}
 			if (value == "all") {
 				if (limit < 4) {
 					limit++;
 					return json
 				}
-
+				more.push(json);
 			}
 
 		})

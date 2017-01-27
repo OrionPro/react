@@ -1,65 +1,98 @@
-[{
-        "id": "1",
-        "category": "1",
-        "img": "img/contacts_img1.png",
-        "url": "https://habrahabr.ru/post/319674/"
-    }, {
-        "id": "2",
-        "category": "1",
-        "img": "img/contacts_img1.png",
-        "url": "http://"
-    }, {
-        "id": "3",
-        "category": "1",
-        "img": "img/contacts_img1.png",
-        "url": "http://"
-    }, {
-        "id": "4",
-        "category": "1",
-        "img": "img/contacts_img1.png",
-        "url": "http://"
-    }
-
-    , {
-        "id": "5",
-        "category": "2",
-        "img": "img/contacts_img2.png",
-        "url": "http://"
-    }, {
-        "id": "6",
-        "category": "2",
-        "img": "img/contacts_img2.png",
-        "url": "http://"
-    }, {
-        "id": "7",
-        "category": "2",
-        "img": "img/contacts_img2.png",
-        "url": "http://"
-    }, {
-        "id": "8",
-        "category": "3",
-        "img": "img/contacts_img3.png",
-        "url": "http://"
-    }, {
-        "id": "9",
-        "category": "3",
-        "img": "img/contacts_img3.png",
-        "url": "http://"
-    }, {
-        "id": "10",
-        "category": "3",
-        "img": "img/contacts_img3.png",
-        "url": "http://"
-    }, {
-        "id": "11",
-        "category": "3",
-        "img": "img/contacts_img3.png",
-        "url": "http://"
-    }, {
-        "id": "12",
-        "category": "3",
-        "img": "img/contacts_img3.png",
-        "url": "http://"
-    }
-
+[
+	{
+		"id": "1",
+		"category": "1",
+		"img": "img/contacts_img1.png",
+		"url": "https://habrahabr.ru/post/319674/"
+	},
+	{
+		"id": "2",
+		"category": "1",
+		"img": "img/contacts_img1.png",
+		"url": "http://"
+	},
+	{
+		"id": "3",
+		"category": "1",
+		"img": "img/contacts_img1.png",
+		"url": "http://"
+	},
+	{
+		"id": "4",
+		"category": "1",
+		"img": "img/contacts_img1.png",
+		"url": "http://"
+	},
+	{
+		"id": "5",
+		"category": "2",
+		"img": "img/contacts_img2.png",
+		"url": "http://"
+	},
+	{
+		"id": "6",
+		"category": "2",
+		"img": "img/contacts_img2.png",
+		"url": "http://"
+	},
+	{
+		"id": "7",
+		"category": "2",
+		"img": "img/contacts_img2.png",
+		"url": "http://"
+	},
+	{
+		"id": "8",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "9",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "10",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "11",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "12",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "13",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "14",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "15",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "16",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	}
 ]
