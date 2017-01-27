@@ -32,34 +32,26 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		var limit = 0;
+		var limit = 0,
+			more = this.more.elem;
 		var filterElem = json.filter(function (el) {
 			if (limit < 4) {
 				limit++;
 				return el
 			}
+			//more.push(el);
 		})
 		this.setState({
 			count: filterElem
 		})
 	}
 
-	showMore() {
-		var res = [];
+	showMore() {// добавляет по 2 эелементы 
+		var sort = this.more.elem.splice(0, 2);
 
-		// res.push(this.state.count);
-		// res.push(this.more.elem);
-		// res.map(el=>{
-		// 	console.log(el);
-		//
-		// })
-		this.more.elem.map(el =>{
-			res.push(el)
-		});
 		this.setState({
-			count: this.state.count.concat(res)
+			count: this.state.count.concat(sort)
 		});
-
 	}
 	
 
@@ -83,7 +75,7 @@ class App extends Component {
 					limit++;
 					return json
 				}
-				more.push(json);
+				more.push(el);
 			}
 
 		})

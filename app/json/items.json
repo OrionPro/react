@@ -25,56 +25,56 @@
 	},
 	{
 		"id": "5",
-		"category": "2",
-		"img": "img/contacts_img2.png",
+		"category": "1",
+		"img": "img/contacts_img1.png",
 		"url": "http://"
 	},
 	{
 		"id": "6",
-		"category": "2",
-		"img": "img/contacts_img2.png",
+		"category": "1",
+		"img": "img/contacts_img1.png",
 		"url": "http://"
 	},
 	{
 		"id": "7",
+		"category": "1",
+		"img": "img/contacts_img1.png",
+		"url": "http://"
+	},
+	{
+		"id": "8",
 		"category": "2",
 		"img": "img/contacts_img2.png",
 		"url": "http://"
 	},
 	{
-		"id": "8",
-		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
-	},
-	{
 		"id": "9",
-		"category": "3",
-		"img": "img/contacts_img3.png",
+		"category": "2",
+		"img": "img/contacts_img2.png",
 		"url": "http://"
 	},
 	{
 		"id": "10",
-		"category": "3",
-		"img": "img/contacts_img3.png",
+		"category": "2",
+		"img": "img/contacts_img2.png",
 		"url": "http://"
 	},
 	{
 		"id": "11",
-		"category": "3",
-		"img": "img/contacts_img3.png",
+		"category": "2",
+		"img": "img/contacts_img2.png",
 		"url": "http://"
 	},
 	{
 		"id": "12",
-		"category": "3",
-		"img": "img/contacts_img3.png",
+		"category": "2",
+		"img": "img/contacts_img2.png",
 		"url": "http://"
 	},
 	{
 		"id": "13",
-		"category": "3",
-		"img": "img/contacts_img3.png",
+		"category": "2",
+		"img": "img/contacts_img2.png",
 		"url": "http://"
 	},
 	{
@@ -91,6 +91,42 @@
 	},
 	{
 		"id": "16",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "17",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "18",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "19",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "20",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "21",
+		"category": "3",
+		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "22",
 		"category": "3",
 		"img": "img/contacts_img3.png",
 		"url": "http://"
