@@ -19,38 +19,45 @@ class Template extends Component {
 // 	}
 // }
 
+
+
 class App extends Component {
 
-
+	
 	constructor(props) {
 		super(props);
 		//this.state = {count: this.props.json}
+
+        const quantity = 4;
+
 		this.state = {count: json};
 		this.more = {elem: []};
-		this.filter = this.filter.bind(this);
-		this.showMore = this.showMore.bind(this);
+        this.qualElem = quantity;
+        this.filter = this.filter.bind(this);
+        this.showMore = this.showMore.bind(this);
 	}
 
 	componentDidMount() {
-		var limit = 0,
-			more = this.more.elem;
-		var filterElem = json.filter(function (el) {
-			if (limit < 4) {
-				limit++;
-				return el
-			}
-			//more.push(el);
-		})
-		this.setState({
+        var more = this.more.elem,
+      		filterElem = json.slice(0, this.qualElem),
+			moreArr = json.reverse().slice(0, (json.length - this.qualElem )).reverse();
+
+        	moreArr.map(function (el) {
+                more.push(el);
+            })
+
+			
+        this.setState({
 			count: filterElem
 		})
 	}
 
 	showMore() {// добавляет по 2 эелементы
-
+	
 		var sort = this.more.elem.splice(0, 2);
 
-		this.setState({
+
+        this.setState({
 			count: this.state.count.concat(sort)
 		});
 
@@ -64,18 +71,18 @@ class App extends Component {
 			value = btn.value,
 			more = this.more.elem;
 			
-		var filterElem = json.filter(function (el) {
+		var filterElem = json.filter(el =>{
 
 			var filterElem = el.category;
 			if (value == filterElem) {
-				if (limit < 4) {
+				if (limit < this.qualElem) {
 					limit++;
 					return el
 				}
 				more.push(el);
 			}
 			if (value == "all") {
-				if (limit < 4) {
+				if (limit < this.qualElem) {
 					limit++;
 					return json
 				}
