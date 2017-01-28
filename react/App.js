@@ -46,22 +46,26 @@ class App extends Component {
 		})
 	}
 
-	showMore() {// добавляет по 2 эелементы 
+	showMore() {// добавляет по 2 эелементы
+
 		var sort = this.more.elem.splice(0, 2);
 
 		this.setState({
 			count: this.state.count.concat(sort)
 		});
+
 	}
-	
+
 
 	filter(event) {
+		this.more.elem = [];
 		var btn = event.target,
 			limit = 0,
 			value = btn.value,
 			more = this.more.elem;
 			
 		var filterElem = json.filter(function (el) {
+
 			var filterElem = el.category;
 			if (value == filterElem) {
 				if (limit < 4) {
@@ -78,7 +82,7 @@ class App extends Component {
 				more.push(el);
 			}
 
-		})
+		});
 		this.setState({
 			count: filterElem
 		})
