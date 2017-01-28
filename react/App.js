@@ -39,14 +39,22 @@ class App extends Component {
 
 	componentDidMount() {
         var more = this.more.elem,
-      		filterElem = json.slice(0, this.qualElem),
-			moreArr = json.reverse().slice(0, (json.length - this.qualElem )).reverse();
+      		filterElem = json.slice(0, this.qualElem);
+            // moreArr = json.reverse().slice(0, (json.length - this.qualElem )).reverse();
+            //
+            // moreArr.map(function (el) {
+            //     more.push(el);
+            // })
+            //
+            for(var i = 0; i< json.length; i++){
+                if(i > (this.qualElem - 1)){
+                    more.push(json[i])
+                }
+            }
 
-        	moreArr.map(function (el) {
-                more.push(el);
-            })
 
-			
+
+
         this.setState({
 			count: filterElem
 		})

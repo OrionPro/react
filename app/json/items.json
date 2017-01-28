@@ -11,6 +11,7 @@
 		"img": "img/contacts_img1.png",
 		"url": "http://"
 	},
+
 	{
 		"id": "3",
 		"category": "1",
@@ -129,6 +130,12 @@
 		"id": "22",
 		"category": "3",
 		"img": "img/contacts_img3.png",
+		"url": "http://"
+	},
+	{
+		"id": "23",
+		"category": "2",
+		"img": "img/contacts_img1.png",
 		"url": "http://"
 	}
 ]
