@@ -23,7 +23,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		const quantity = 4; //кол-во выводимых элементов
+		const quantity = 18; //кол-во выводимых элементов
 		const muchAdd = 2; // кол-во добавляемых элементов
 
 		this.qualElem = quantity; // запись в переменную, которая будет доступна во всем классе
@@ -39,6 +39,22 @@ class App extends Component {
 
 	}
 
+	LoadWiScroll(){
+		var container = document.getElementById('container');
+
+
+        window.addEventListener("scroll", function() {
+            var scrollTop = window.pageYOffset || window.documentElement.scrollTop;
+            console.log(scrollTop)
+            console.log(screen.height)
+
+            if((scrollTop + screen.height) >= container.clientHeight){
+                console.log('asc')
+
+            }
+        })
+
+	}
 
 	readyAddItems() {
 
@@ -62,6 +78,7 @@ class App extends Component {
 
 	componentDidMount() {
 		this.readyAddItems();
+		this.LoadWiScroll();
 	}
 
 
