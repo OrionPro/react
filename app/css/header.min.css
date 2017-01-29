@@ -90,6 +90,6 @@ label{max-width:100%;margin-bottom:5px;font-weight:700}
 .items{display:inline-block;margin-right:10px;margin-bottom:30px}
 .items:last-of-type{margin-right:0}
 .text_center{margin-top:50px;text-align:center}
-.all_items ul{margin:30px 0 0;padding:0}
+.all_items ul{padding:0;max-width:260px;margin:auto}
 .items_wrap .button{margin-right:10px}
 .items_wrap .button:last-of-type{margin-right:0}

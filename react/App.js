@@ -4,7 +4,7 @@ import json from '../app/json/items.json';
 // import axios from 'axios';
 
 
-class Template extends Component {
+class ItemsTmp extends Component {
 	render() {
 		return (
 			<li className="items">
@@ -16,12 +16,6 @@ class Template extends Component {
 	}
 }
 
-// class MoreElem extends Component{
-// 	render(){
-// 		return()
-// 	}
-// }
-
 
 class App extends Component {
 
@@ -29,7 +23,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		const quantity = 5; //кол-во выводимых элементов
+		const quantity = 4; //кол-во выводимых элементов
 		const muchAdd = 2; // кол-во добавляемых элементов
 
 		this.qualElem = quantity; // запись в переменную, которая будет доступна во всем классе
@@ -136,7 +130,7 @@ class App extends Component {
 				<ul>
 					{
 						this.state.count.map(function (el) {
-							return <Template
+							return <ItemsTmp
 								key={el.id}
 								src={el.img}
 								url={el.url}
