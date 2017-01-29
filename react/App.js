@@ -7,8 +7,10 @@ import json from '../app/json/items.json';
 class Template extends Component {
 	render() {
 		return (
-			<li className="job">
-				<a href={ this.props.url }><img className="image" src={ this.props.src }/></a>
+			<li className="items">
+				<a href={ this.props.url }>
+					<img className="image img-thumbnail" src={ this.props.src }/>
+				</a>
 			</li>
 		);
 	}
@@ -21,68 +23,58 @@ class Template extends Component {
 // }
 
 
-
 class App extends Component {
 
 
 	constructor(props) {
 		super(props);
 
-        const quantity = 10; //кол-во выводимых элементов
+		const quantity = 5; //кол-во выводимых элементов
 		const muchAdd = 2; // кол-во добавляемых элементов
 
-        this.qualElem = quantity; // запись в переменную, которая будет доступна во всем классе
-        this.muchAdd = muchAdd; // запись в переменную, которая будет доступна во всем классе
+		this.qualElem = quantity; // запись в переменную, которая будет доступна во всем классе
+		this.muchAdd = muchAdd; // запись в переменную, которая будет доступна во всем классе
 
 
-
-
-
-
-        this.state = {count: json};
+		this.state = {count: json};
 		this.more = {elem: []};
-		
-        this.filter = this.filter.bind(this);
-        this.showMore = this.showMore.bind(this);
-       
-      
 
-    }
+		this.filter = this.filter.bind(this);
+		this.showMore = this.showMore.bind(this);
 
 
-
-	readyAddItems(){
-
-        var more = this.more.elem;
-        if(json.length > this.qualElem){
-            this.filterElem = json.slice(0, this.qualElem);
-
-            for(var i = 0; i < json.length; i++){
-                if(i > (this.qualElem - 1)){
-                    more.push(json[i])
-                }
-            }
-		} else this.filterElem = json;
-
-
-        this.setState({
-            count: this.filterElem
-        })
 	}
 
 
+	readyAddItems() {
+
+		var more = this.more.elem;
+		if (json.length > this.qualElem) {
+			this.filterElem = json.slice(0, this.qualElem);
+
+			for (var i = 0; i < json.length; i++) {
+				if (i > (this.qualElem - 1)) {
+					more.push(json[i])
+				}
+			}
+		} else this.filterElem = json;
+
+
+		this.setState({
+			count: this.filterElem
+		})
+	}
 
 
 	componentDidMount() {
-        this.readyAddItems();
-    }
+		this.readyAddItems();
+	}
 
 
-
-    showMore() {// добавляет по 2 эелементы
+	showMore() {// добавляет по 2 эелементы
 
 		var sort = this.more.elem.splice(0, this.muchAdd);
-        this.setState({
+		this.setState({
 			count: this.state.count.concat(sort)
 		});
 
@@ -92,13 +84,13 @@ class App extends Component {
 	filter(event) {
 
 
-        this.more.elem = [];
+		this.more.elem = [];
 		var btn = event.target,
 			limit = 0,
 			value = btn.value,
 			more = this.more.elem;
 
-        var filterElem = json.filter(el =>{
+		var filterElem = json.filter(el => {
 
 			var filterElem = el.category;
 			if (value == filterElem) {
@@ -121,26 +113,26 @@ class App extends Component {
 			count: filterElem
 		})
 
-    }
+	}
 
-    inpecBnt(){
-        if(this.more.elem.length !== 0){
-            return <button onClick={this.showMore}>more</button>
-        } else  return "конец"
-    }
+	inpecBnt() {
+		if (this.more.elem.length !== 0) {
+			return <button className="center-block" onClick={this.showMore}>more</button>
+		} else  return <button className="center-block">no items</button>
+	}
 
 
-    //df
+	//df
 	render() {
 		return (
-			<div>
-				<button className="button" onClick={this.filter} value="1">1</button>
-				<button className="button" onClick={this.filter} value="2">2</button>
-				<button className="button" onClick={this.filter} value="3">3</button>
-				<button className="button" onClick={this.filter} value="all">all</button>
-				{
-                    this.inpecBnt()
-				}
+			<div className="all_items text_center">
+				<div className="items_wrap">
+					<button className="button" onClick={this.filter} value="1">Category 1</button>
+					<button className="button" onClick={this.filter} value="2">Category 2</button>
+					<button className="button" onClick={this.filter} value="3">Category 3</button>
+					<button className="button" onClick={this.filter} value="all">all</button>
+				</div>
+
 				<ul>
 					{
 						this.state.count.map(function (el) {
@@ -153,7 +145,9 @@ class App extends Component {
 
 					}
 				</ul>
-
+				{
+					this.inpecBnt()
+				}
 			</div>
 
 		)
