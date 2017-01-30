@@ -126,7 +126,7 @@ class App extends Component {
 
 	}
 
-	inpecBnt() {
+	inspectBnt() {
 		if (this.more.elem.length !== 0) {
 			return <button className="center-block" onClick={this.showMore}>more</button>
 		} else  return <button className="center-block">no items</button>
@@ -157,7 +157,7 @@ class App extends Component {
 					}
 				</ul>
 				{
-					this.inpecBnt()
+					this.inspectBnt()
 				}
 			</div>
 
