@@ -23,8 +23,8 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		const quantity = 18; //кол-во выводимых элементов
-		const muchAdd = 2; // кол-во добавляемых элементов
+		const quantity = 6; //кол-во выводимых элементов
+		const muchAdd = 4; // кол-во добавляемых элементов
 
 		this.qualElem = quantity; // запись в переменную, которая будет доступна во всем классе
 		this.muchAdd = muchAdd; // запись в переменную, которая будет доступна во всем классе
