@@ -124,8 +124,8 @@ class App extends Component {
 
 	inspectBnt() {
 		if (this.more.elem.length !== 0) {
-			return <button className="center-block" onClick={this.showMore}>more</button>
-		} else  return <button className="center-block">no items</button>
+			return <button className="center-block button" onClick={this.showMore}>more</button>
+		} else  return <button className="center-block button">no items</button>
 	}
 
 	//Основной render  в компоненте

@@ -510,10 +510,39 @@ label
 .items_wrap
 	.button
 		margin-right: 10px
+		color: #fff
+		background-color: rgba(0,0,0,.4)
+		border-color: rgba(0,0,0,.8)
+		opacity: .85
+		transition: 0.5s
+		&:hover
+			outline: 0
+			background-color: rgba(0,0,0,1)
+		&:active
+			outline: 0
+			background-color: rgba(0,0,0,1)
+		&:focus
+			outline: 0
+			background-color: rgba(0,0,0,1)
+		
 		&:last-of-type
 			margin-right: 0
-button
+button.button
 	margin-bottom: 50px
+	color: #ffffff
+	background-color: rgba(0,0,0,.4)
+	border-color: rgba(0,0,0,.8)
+	opacity: .85
+	transition: 0.5s
+	&:hover
+		background-color: rgba(0,0,0,1)
+		outline: 0
+	&:active
+		background-color: rgba(0,0,0,1)
+		outline: 0
+	&:focus
+		background-color: rgba(0,0,0,1)
+		outline: 0
 .title_h2
 	color: #fff
 	text-align: center
@@ -530,6 +559,7 @@ button
 	height: 87px
 	margin-bottom: 4px
 	padding-left: 244px
+	transition: 0.5s
 	&:hover
 		text-decoration: none
 		color: inherit
