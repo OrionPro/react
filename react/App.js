@@ -51,6 +51,9 @@ class App extends Component {
 		this.state = {count: json};
 		this.more = {elem: []};
 
+		this.didElem;
+		this.willElem;
+
 		this.filter = this.filter.bind(this);
 		this.showMore = this.showMore.bind(this);
 		this._handleClick = this._handleClick.bind(this);
@@ -84,16 +87,16 @@ class App extends Component {
 			$(this).addClass("active");
 		})
 	}
-
 	componentDidMount() {
+
 		this.readyAddItems();
 		this.jQueryEvents();
+		var tl = new TimelineMax();
+		tl.add("anim", "+=1").staggerFrom('.tab_item', 0.3, {opacity: 0, y: 100}, 0.1, "anim");
 	}
 
 
-
 	showMore(event) {// добавляет по 2 эелементы
-
 
 		event.preventDefault();
 		var sort = this.more.elem.splice(0, this.muchAdd);
@@ -150,8 +153,15 @@ class App extends Component {
 		} else  return <button className="center-block button">no items</button>
 	}
 
+
+	componentDidUpdate(){
+
+	}
+
 	//Основной render  в компоненте
+
 	render() {
+
 		return (
 			<div className="all_items text_center">
 				<div className="items_wrap">
