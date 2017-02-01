@@ -16,6 +16,7 @@ body
 	font-family: $font_RobotoRegular
 	overflow-x: hidden
 	color: $main_txt_color
+	background: #1b2838;
 	-webkit-tap-highlight-color:transparent
 	//внешний вид скроллбара 
 	scrollbar-base-color: $main_color   //для IE 
@@ -500,17 +501,232 @@ label
 		margin-right: 0
 .text_center
 	margin-top: 50px
-	text-align: center
+
 .all_items
 	ul
 		padding: 0
-		max-width: 520px
+		max-width: 100%
 		margin: 30px auto 70px
 .items_wrap
 	.button
 		margin-right: 10px
+		color: #fff
+		background-color: rgba(0,0,0,.4)
+		border-color: rgba(0,0,0,.8)
+		opacity: .85
+		transition: 0.5s
+		&:hover
+			outline: 0
+			background-color: rgba(0,0,0,1)
+		&:active
+			outline: 0
+			background-color: rgba(0,0,0,1)
+		&:focus
+			outline: 0
+			background-color: rgba(0,0,0,1)
+		
 		&:last-of-type
 			margin-right: 0
+button.button
+	margin-bottom: 50px
+	color: #ffffff
+	background-color: rgba(0,0,0,.4)
+	border-color: rgba(0,0,0,.8)
+	opacity: .85
+	transition: 0.5s
+	&:hover
+		background-color: rgba(0,0,0,1)
+		border-color: rgba(255, 255, 251, 0.8)
+		outline: 0
+	&:active
+		background-color: rgba(0,0,0,1)
+		border-color: rgba(255, 255, 251, 0.8)
+		outline: 0
+	&:focus
+		background-color: rgba(0,0,0,1)
+		border-color: rgba(255, 255, 251, 0.8)
+		outline: 0
+	&.active
+		background-color: rgba(0,0,0,1)
+		border-color: rgba(255, 255, 251, 0.8)
+.title_h2
+	color: #fff
+	text-align: center
+	font-size: 40px
+/*
+ * TABS
+ */
+
+.tab_item
+	position: relative
+	display: block
+	background: #202d39
+	background: rgba(0, 0, 0, 0.2 )
+	height: 87px
+	margin-bottom: 4px
+	padding-left: 244px
+	transition: background 0.5s
+	&:hover
+		text-decoration: none
+		color: inherit
+	&:active
+		text-decoration: none
+		color: inherit
+	&:focus
+		text-decoration: none
+		color: inherit
+.tab_item.episode
+	padding-left: 158px
+
+.tab_item:hover,
+.tab_item:hover
+	background: rgba( 0, 0, 0, 0.4 )
+.tab_item_overlay
+	display: block
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 10
+.tab_item_overlay_hover
+	position: absolute
+	display: none
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 2
+
+.tab_item:hover .tab_item_overlay_hover
+	display: block
+
+
+.tab_item_overlay img
+	display: block
+	width: calc( 100% - 2px )
+	height: 67px
+		border: 1px solid rgba( 139, 185, 224, 0 )
+
+.tab_item_overlay img
+	height: 85px
+
+
+.tab_item_overlay img:hover, .large .tab_item_overlay img:hover
+	border: 1px solid rgba( 139, 185, 224, 0.2 )
+
+
+.tab_item_cap
+	position: absolute
+	left: 0
+	top: 0
+	z-index: 3
+	line-height: 69px
+	transition: opacity 0.25s
+
+.sub .tab_item_cap
+	width: 184px
+
+.tab_item_cap
+	width: 231px
+	height: 87px
+	line-height: 87px
+
+.tab_item_cap img
+	width: 231px
+	height: 87px
+
+
+.tab_item_discount
+	display: block
+	float: right
+	margin-right: 16px
+	background: none
+	margin-top: 23px
+	width: 120px
+	text-align: right
+
+.tab_item_discount.no_discount
+	margin-top: 32px
+	width: auto
+
+
+.tab_item_discount .bundle_base_discount
+	display: none
+
+
+.tab_item_discount .discount_pct,
+.tab_item_discount.no_discount .bundle_base_discount
+	display: block
+	float: left
+	font-size: 14px
+	line-height: 18px
+	padding: 0 4px
+	margin-top: 8px
+	border-radius: 1px
+
+.discount_block .discount_pct, .discount_pct
+	color: #a4d007
+	background: #4c6b22
+	display: inline-block
+
+
+.tab_item_discount .discount_final_price
+	color: #9099a1
+	font-size: 13px
+
+
+.tab_item_content
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+	padding-top: 6px
+	font-size: 12px
+
+
+.tab_item_content
+	padding-top: 16px
+
+
+.home_tabs_content .tab_item_content
+	padding-top: 7px
+
+
+.tab_item_name
+	color: #c7d5e0
+	font-size: 1.25em
+	line-height: 18px
+	text-overflow: ellipsis
+	white-space: nowrap
+	display: block
+	overflow: hidden
+	transition: color 0.25s
+
+.tab_item_details
+	color: #384959
+	line-height: 20px
+
+.tab_item_details span.platform_img
+	vertical-align: bottom
+	opacity: 0.3
+
+
+
+.tab_item.ds_flagged:not(.ds_wishlist):not(:hover) .tab_item_cap
+	opacity: 0.3
+
+
+.tab_item.ds_flagged:not(.ds_wishlist):not(:hover) .tab_item_content .tab_item_name
+	color: #62696e
+
+.tab_item_top_tags
+	height: 20px
+	white-space: normal
+	overflow: hidden
+
+.tab_item_top_tags .top_tag
+	white-space: nowrap
+
 // Секция 
 // Секция 
 // Секция 

@@ -2,140 +2,201 @@
 	{
 		"id": "1",
 		"category": "1",
-		"img": "img/contacts_img1.png",
-		"url": "https://habrahabr.ru/post/319674/"
+		"img": "img/capsule_231x87%20(1).jpg",
+		"url": "",
+		"discount_pct": "-40%",
+		"final_price": "$9.99",
+		"tab_item_name": "Conan Exiles",
+		"top_tag": "Early Access, Выживание, Открытый мир, Нагота"
 	},
 	{
 		"id": "2",
 		"category": "1",
-		"img": "img/contacts_img1.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(2).jpg",
+		"url": "",
+		"discount_pct": "",
+		"final_price": "$19.99",
+		"tab_item_name": "Disgaea 2 PC",
+		"top_tag": "Стратегия, Аниме , Японская ролевая игра"
 	},
 
 	{
 		"id": "3",
 		"category": "1",
-		"img": "img/contacts_img1.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(3).jpg",
+		"url": "",
+		"discount_pct": "",
+		"final_price": "$10.99",
+		"tab_item_name": "Tales of Berseria™",
+		"top_tag": "Стратегия, Ролевая игра"
 	},
 	{
 		"id": "4",
 		"category": "1",
-		"img": "img/contacts_img1.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(4).jpg",
+		"url": "",
+		"discount_pct": "-20%",
+		"final_price": "$12.99",
+		"tab_item_name": "Urban Empire",
+		"top_tag": "Стратегия, Градостроительный симулятор, Политика"
 	},
 	{
 		"id": "5",
 		"category": "1",
-		"img": "img/contacts_img1.png",
-		"url": "http://"
-	},
-	{
-		"id": "6",
-		"category": "1",
-		"img": "img/contacts_img1.png",
-		"url": "http://"
-	},
-	{
-		"id": "7",
-		"category": "1",
-		"img": "img/contacts_img1.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(5).jpg",
+		"url": "",
+		"discount_pct": "",
+		"final_price": "$16.99",
+		"tab_item_name": "Pit People®",
+		"top_tag": "Стратегия, Ролевая игра"
 	},
 	{
 		"id": "8",
 		"category": "2",
-		"img": "img/contacts_img2.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(6).jpg",
+		"url": "",
+		"discount_pct": "-20%",
+		"final_price": "$11.99",
+		"tab_item_name": "Force of nature",
+		"top_tag": "Стратегия, Ролевая игра"
 	},
 	{
 		"id": "9",
-		"category": "2",
-		"img": "img/contacts_img2.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(7).jpg",
+		"url": "",
+		"discount_pct": "",
+		"final_price": "$8.99",
+		"tab_item_name": "Dragon blood",
+		"top_tag": "Стратегия, ММО, Ролевая игра"
 	},
 	{
 		"id": "10",
 		"category": "2",
-		"img": "img/contacts_img2.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(8).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$6.99",
+		"tab_item_name": "Triangles",
+		"top_tag": "Стратегия, Ролевая игра"
 	},
 	{
 		"id": "11",
 		"category": "2",
-		"img": "img/contacts_img2.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(8).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$17.99",
+		"tab_item_name": "Tales of Berseria™ - Attachment Set",
+		"top_tag": "Экшен, Ролевая игра"
 	},
 	{
 		"id": "12",
 		"category": "2",
-		"img": "img/contacts_img2.png",
-		"url": "http://"
-	},
-	{
-		"id": "13",
-		"category": "2",
-		"img": "img/contacts_img2.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(9).jpg",
+		"url": "",
+		"discount_pct": "-50%",
+		"final_price": "$11.99",
+		"tab_item_name": "Tales of Berseria™ - Adventure Item Pack 2",
+		"top_tag": "Экшн, Ролевая игра"
 	},
 	{
 		"id": "14",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(10).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$18.99",
+		"tab_item_name": "Tales of Berseria™ ",
+		"top_tag": "Экшн, Ролевая игра"
 	},
 	{
 		"id": "15",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(11).jpg",
+		"url": "",
+		"discount_pct": "",
+		"final_price": "$71.99",
+		"tab_item_name": "Angels with Scaly Wings",
+		"top_tag": "Стратегия, Ролевая игра, Инди"
 	},
 	{
 		"id": "16",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(12).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$11.99",
+		"tab_item_name": "ARK: Survival Evolved",
+		"top_tag": "Стратегия, Выживание, Динозавры , Открытый мир"
 	},
 	{
 		"id": "17",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(13).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$19.99",
+		"tab_item_name": "ARK: Scorched Earth - Expansion Pack",
+		"top_tag": "Стратегия, Выживание, Динозавры , Открытый мир"
 	},
 	{
 		"id": "18",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(14).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$10.99",
+		"tab_item_name": "The Witcher® 3: Wild Hunt",
+		"top_tag": "Стратегия, Выживание, Открытый мир Ролевая игра, Атмосфера"
 	},
 	{
 		"id": "19",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(15).jpg",
+		"url": "",
+		"discount_pct": "",
+		"final_price": "$6.99",
+		"tab_item_name": "Pay Day",
+		"top_tag": "Стратегия, Ролевая игра"
 	},
 	{
 		"id": "20",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(17).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$11.99",
+		"tab_item_name": "Mass Effect Collection",
+		"top_tag": "Стратегия, Ролевая игра, Глубокий сюжет"
 	},
 	{
 		"id": "21",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(18).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$21.99",
+		"tab_item_name": "Lost Castle",
+		"top_tag": "Экшен, Приключенческая игра, Ролевая игра"
 	},
 	{
 		"id": "22",
 		"category": "3",
-		"img": "img/contacts_img3.png",
-		"url": "http://"
+		"img": "img/capsule_231x87%20(19).jpg",
+		"url": "",
+		"discount_pct": "-30%",
+		"final_price": "$71.99",
+		"tab_item_name": "The Witcher 3: Wild Hunt - Blood and Wine",
+		"top_tag": "Стратегия, Выживание, Открытый мир Ролевая игра, Атмосфера"
 	},
 	{
 		"id": "23",
 		"category": "2",
-		"img": "img/contacts_img1.png",
-		"url": "http://"
+		"img": "img/header(1).jpg",
+		"url": "",
+		"discount_pct": "",
+		"final_price": "$9.99",
+		"tab_item_name": "Force Nature",
+		"top_tag": "Стратегия, Ролевая игра"
 	}
 ]

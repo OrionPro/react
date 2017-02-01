@@ -7,9 +7,27 @@ import json from '../app/json/items.json';
 class ItemsTmp extends Component {
 	render() {
 		return (
-			<li className="items">
-				<a href={ this.props.url }>
-					<img className="image img-thumbnail" src={ this.props.src }/>
+			<li>
+				<a href={ this.props.url } className="tab_item">
+					<div className=" tab_item_cap">
+						<img className="tab_item_cap_img" src={ this.props.src }/>
+					</div>
+					<div className="discount_block tab_item_discount">
+						<div className="discount_pct">{this.props.discount_pct}</div>
+						<div className="discount_prices">
+							<div className="discount_final_price">{this.props.final_price}</div>
+						</div>
+					</div>
+					<div className="tab_item_content">
+						<div className="tab_item_name">{this.props.tab_item_name}</div>
+						<div className="tab_item_details">
+							<span className="platform_img win"></span>
+							<div className="tab_item_top_tags">
+								<span	className="top_tag">{this.props.top_tag}</span>
+							</div>
+						</div>
+					</div>
+					<div style={{clear: 'both'}}></div>
 				</a>
 			</li>
 		);
@@ -23,7 +41,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		const quantity = 6; //кол-во выводимых элементов
+		const quantity = 4; //кол-во выводимых элементов
 		const muchAdd = 4; // кол-во добавляемых элементов
 
 		this.qualElem = quantity; // запись в переменную, которая будет доступна во всем классе
@@ -33,26 +51,13 @@ class App extends Component {
 		this.state = {count: json};
 		this.more = {elem: []};
 
+		this.didElem;
+		this.willElem;
+
 		this.filter = this.filter.bind(this);
 		this.showMore = this.showMore.bind(this);
+		this._handleClick = this._handleClick.bind(this);
 
-
-	}
-
-	LoadWiScroll(){
-		var container = document.getElementById('container');
-
-
-        window.addEventListener("scroll", function() {
-            var scrollTop = window.pageYOffset || window.documentElement.scrollTop;
-            console.log(scrollTop)
-            console.log(screen.height)
-
-            if((scrollTop + screen.height) >= container.clientHeight){
-                console.log('asc')
-
-            }
-        })
 
 	}
 
@@ -75,15 +80,25 @@ class App extends Component {
 		})
 	}
 
+	jQueryEvents(){ // для навешивания событий jQuery на любые элементы в компоненте
 
+		$('.button').click(function () {
+			$('.button').removeClass("active");
+			$(this).addClass("active");
+		})
+	}
 	componentDidMount() {
+
 		this.readyAddItems();
-		this.LoadWiScroll();
+		this.jQueryEvents();
+		var tl = new TimelineMax();
+		tl.add("anim", "+=1").staggerFrom('.tab_item', 0.3, {opacity: 0, y: 100}, 0.1, "anim");
 	}
 
 
-	showMore() {// добавляет по 2 эелементы
+	showMore(event) {// добавляет по 2 эелементы
 
+		event.preventDefault();
 		var sort = this.more.elem.splice(0, this.muchAdd);
 		this.setState({
 			count: this.state.count.concat(sort)
@@ -91,12 +106,10 @@ class App extends Component {
 
 	}
 
-
-	filter(event) {
-
+	filter(el) {
 
 		this.more.elem = [];
-		var btn = event.target,
+		var btn = el,
 			limit = 0,
 			value = btn.value,
 			more = this.more.elem;
@@ -126,22 +139,36 @@ class App extends Component {
 
 	}
 
+	_handleClick(event) {
+		event.preventDefault();
+		var el = event.target;
+
+		this.filter(el);
+
+	}
+
 	inspectBnt() {
 		if (this.more.elem.length !== 0) {
-			return <button className="center-block" onClick={this.showMore}>more</button>
-		} else  return <button className="center-block">no items</button>
+			return <button className="center-block button" onClick={this.showMore}>more</button>
+		} else  return <button className="center-block button">no items</button>
 	}
 
 
-	//df
+	componentDidUpdate(){
+
+	}
+
+	//Основной render  в компоненте
+
 	render() {
+
 		return (
 			<div className="all_items text_center">
 				<div className="items_wrap">
-					<button className="button" onClick={this.filter} value="1">Category 1</button>
-					<button className="button" onClick={this.filter} value="2">Category 2</button>
-					<button className="button" onClick={this.filter} value="3">Category 3</button>
-					<button className="button" onClick={this.filter} value="all">all</button>
+					<button className="button" onClick={this._handleClick} value="1">Category 1</button>
+					<button className="button" onClick={this._handleClick} value="2">Category 2</button>
+					<button className="button" onClick={this._handleClick} value="3">Category 3</button>
+					<button className="button" onClick={this._handleClick} value="all">all</button>
 				</div>
 
 				<ul>
@@ -151,6 +178,10 @@ class App extends Component {
 								key={el.id}
 								src={el.img}
 								url={el.url}
+								discount_pct={el.discount_pct}
+								final_price={el.final_price}
+								tab_item_name={el.tab_item_name}
+								top_tag={el.top_tag}
 							/>
 						})
 
