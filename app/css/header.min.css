@@ -97,6 +97,7 @@ label{max-width:100%;margin-bottom:5px;font-weight:700}
 .items_wrap .button:last-of-type{margin-right:0}
 button.button{margin-bottom:50px;background-color:rgba(0,0,0,.4);transition:.5s}
 button.button:active,button.button:focus,button.button:hover{background-color:#000;outline:0}
+button.button.active{background-color:#000}
 .title_h2{color:#fff;font-size:40px}
 .tab_item{position:relative;display:block;background:#202d39;background:rgba(0,0,0,.2);height:87px;margin-bottom:4px;padding-left:244px;-webkit-transition:.5s;transition:.5s}
 .tab_item_cap,.tab_item_overlay,.tab_item_overlay_hover{position:absolute;left:0;top:0}

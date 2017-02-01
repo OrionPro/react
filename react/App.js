@@ -53,6 +53,7 @@ class App extends Component {
 
 		this.filter = this.filter.bind(this);
 		this.showMore = this.showMore.bind(this);
+		this._handleClick = this._handleClick.bind(this);
 
 
 	}
@@ -76,12 +77,25 @@ class App extends Component {
 		})
 	}
 
-	componentDidMount() {
-		this.readyAddItems();
+	jQueryEvents(){
+
+		$('.button').click(function () {
+			$('.button').removeClass("active");
+			$(this).addClass("active");
+		})
 	}
 
-	showMore() {// добавляет по 2 эелементы
+	componentDidMount() {
+		this.readyAddItems();
+		this.jQueryEvents();
+	}
 
+
+
+	showMore(event) {// добавляет по 2 эелементы
+
+
+		event.preventDefault();
 		var sort = this.more.elem.splice(0, this.muchAdd);
 		this.setState({
 			count: this.state.count.concat(sort)
@@ -89,10 +103,10 @@ class App extends Component {
 
 	}
 
-	filter(event) {
+	filter(el) {
 
 		this.more.elem = [];
-		var btn = event.target,
+		var btn = el,
 			limit = 0,
 			value = btn.value,
 			more = this.more.elem;
@@ -122,6 +136,14 @@ class App extends Component {
 
 	}
 
+	_handleClick(event) {
+		event.preventDefault();
+		var el = event.target;
+
+		this.filter(el);
+
+	}
+
 	inspectBnt() {
 		if (this.more.elem.length !== 0) {
 			return <button className="center-block button" onClick={this.showMore}>more</button>
@@ -133,10 +155,10 @@ class App extends Component {
 		return (
 			<div className="all_items text_center">
 				<div className="items_wrap">
-					<button className="button" onClick={this.filter} value="1">Category 1</button>
-					<button className="button" onClick={this.filter} value="2">Category 2</button>
-					<button className="button" onClick={this.filter} value="3">Category 3</button>
-					<button className="button" onClick={this.filter} value="all">all</button>
+					<button className="button" onClick={this._handleClick} value="1">Category 1</button>
+					<button className="button" onClick={this._handleClick} value="2">Category 2</button>
+					<button className="button" onClick={this._handleClick} value="3">Category 3</button>
+					<button className="button" onClick={this._handleClick} value="all">all</button>
 				</div>
 
 				<ul>

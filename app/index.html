@@ -1982,11 +1982,14 @@
 <script src="libs/respond/respond.min.js"></script>
 <![endif]-->
 <!-- Load Scripts Start -->
-<script src="js/App.js"></script>
+
 <script>
 	var scr = {
 		"scripts": [{
 			"src": "js/libs.js",
+			"async": false
+		}, {
+			"src": "js/App.js",
 			"async": false
 		}, {
 			"src": "js/main.js",
@@ -2013,6 +2016,7 @@
 		}
 	}(window, document, scr);
 </script>
+
 <!-- Load Scripts End -->
 </body>
 
