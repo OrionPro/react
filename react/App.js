@@ -93,12 +93,13 @@ class App extends Component {
 			$(this).addClass("active");
 		})
 	}
+
 	componentDidMount() {
 
 		this.readyAddItems();
 		this.jQueryEvents();
         var tl = new TimelineMax();
-        tl.add("anim1", "+=1").staggerFrom('.readyElem', 0.3, {opacity: 0, y: 100}, 0.1, "anim1");
+        tl.add("anim1", "+=0.8").staggerFrom('.readyElem', 0.3, {opacity: 0, y: 100}, 0.1, "anim1");
     }
 
 
@@ -142,10 +143,10 @@ class App extends Component {
 			}
 
 		});
+
 		this.setState({
 			count: filterElem
 		})
-
 
 	}
 
@@ -183,11 +184,11 @@ class App extends Component {
 	}
 
 	componentDidUpdate(){
-		
+
 		this.resetAnimClass();
 
         var tl = new TimelineMax();
-        tl.add("anim2", "+=1").staggerFrom('.moreElem', 0.3, {opacity: 0, y: 100}, 0.1, "anim2");
+        tl.add("anim2", "+=0.1").staggerFrom('.moreElem', 0.3, {opacity: 0, y: 100}, 0.1, "anim2");
 	}
 
 	//Основной render  в компоненте
@@ -203,7 +204,7 @@ class App extends Component {
 					<button className="button" onClick={this._handleClick} value="1">Category 1</button>
 					<button className="button" onClick={this._handleClick} value="2">Category 2</button>
 					<button className="button" onClick={this._handleClick} value="3">Category 3</button>
-					<button className="button" onClick={this._handleClick} value="all">all</button>
+					<button className="button active" onClick={this._handleClick} value="all">all</button>
 				</div>
 
 				<ul>
