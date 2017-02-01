@@ -77,7 +77,7 @@ class App extends Component {
 		})
 	}
 
-	jQueryEvents(){
+	jQueryEvents(){ // для навешивания событий jQuery на любые элементы в компоненте
 
 		$('.button').click(function () {
 			$('.button').removeClass("active");
