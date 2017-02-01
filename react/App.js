@@ -7,9 +7,27 @@ import json from '../app/json/items.json';
 class ItemsTmp extends Component {
 	render() {
 		return (
-			<li className="items">
-				<a href={ this.props.url }>
-					<img className="image img-thumbnail" src={ this.props.src }/>
+			<li>
+				<a href={ this.props.url } className="tab_item">
+					<div className=" tab_item_cap">
+						<img className="tab_item_cap_img" src={ this.props.src }/>
+					</div>
+					<div className="discount_block tab_item_discount">
+						<div className="discount_pct">{this.props.discount_pct}</div>
+						<div className="discount_prices">
+							<div className="discount_final_price">{this.props.final_price}</div>
+						</div>
+					</div>
+					<div className="tab_item_content">
+						<div className="tab_item_name">{this.props.tab_item_name}</div>
+						<div className="tab_item_details">
+							<span className="platform_img win"></span>
+							<div className="tab_item_top_tags">
+								<span	className="top_tag">{this.props.top_tag}</span>
+							</div>
+						</div>
+					</div>
+					<div style={{clear: 'both'}}></div>
 				</a>
 			</li>
 		);
@@ -23,7 +41,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		const quantity = 6; //кол-во выводимых элементов
+		const quantity = 4; //кол-во выводимых элементов
 		const muchAdd = 4; // кол-во добавляемых элементов
 
 		this.qualElem = quantity; // запись в переменную, которая будет доступна во всем классе
@@ -128,6 +146,10 @@ class App extends Component {
 								key={el.id}
 								src={el.img}
 								url={el.url}
+								discount_pct={el.discount_pct}
+								final_price={el.final_price}
+								tab_item_name={el.tab_item_name}
+								top_tag={el.top_tag}
 							/>
 						})
 
