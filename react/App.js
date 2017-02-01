@@ -39,23 +39,6 @@ class App extends Component {
 
 	}
 
-	LoadWiScroll(){
-		var container = document.getElementById('container');
-
-
-        window.addEventListener("scroll", function() {
-            var scrollTop = window.pageYOffset || window.documentElement.scrollTop;
-            console.log(scrollTop)
-            console.log(screen.height)
-
-            if((scrollTop + screen.height) >= container.clientHeight){
-                console.log('asc')
-
-            }
-        })
-
-	}
-
 	readyAddItems() {
 
 		var more = this.more.elem;
@@ -75,12 +58,9 @@ class App extends Component {
 		})
 	}
 
-
 	componentDidMount() {
 		this.readyAddItems();
-		this.LoadWiScroll();
 	}
-
 
 	showMore() {// добавляет по 2 эелементы
 
@@ -91,9 +71,7 @@ class App extends Component {
 
 	}
 
-
 	filter(event) {
-
 
 		this.more.elem = [];
 		var btn = event.target,
@@ -132,8 +110,7 @@ class App extends Component {
 		} else  return <button className="center-block">no items</button>
 	}
 
-
-	//df
+	//Основной render  в компоненте
 	render() {
 		return (
 			<div className="all_items text_center">
