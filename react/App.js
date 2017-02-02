@@ -8,7 +8,7 @@ class ItemsTmp extends Component {
 	render() {
 		return (
 			<li>
-				<a href={ this.props.url } className="tab_item">
+				<a href={ this.props.url } className={this.props.animID + " tab_item"}>
 					<div className=" tab_item_cap">
 						<img className="tab_item_cap_img" src={ this.props.src }/>
 					</div>
@@ -48,7 +48,10 @@ class App extends Component {
 		this.muchAdd = muchAdd; // запись в переменную, которая будет доступна во всем классе
 
 
-		this.state = {count: json};
+		this.state = {
+			count: json,
+            animID: ['readyElem','moreElem']
+		};
 		this.more = {elem: []};
 
 		this.didElem;
@@ -63,6 +66,7 @@ class App extends Component {
 
 	readyAddItems() {
 
+
 		var more = this.more.elem;
 		if (json.length > this.qualElem) {
 			this.filterElem = json.slice(0, this.qualElem);
@@ -75,10 +79,12 @@ class App extends Component {
 		} else this.filterElem = json;
 
 
-		this.setState({
+        this.setState({
 			count: this.filterElem
 		})
-	}
+
+        
+    }
 
 	jQueryEvents(){ // для навешивания событий jQuery на любые элементы в компоненте
 
@@ -87,24 +93,28 @@ class App extends Component {
 			$(this).addClass("active");
 		})
 	}
+
 	componentDidMount() {
 
 		this.readyAddItems();
 		this.jQueryEvents();
-		var tl = new TimelineMax();
-		tl.add("anim", "+=1").staggerFrom('.tab_item', 0.3, {opacity: 0, y: 100}, 0.1, "anim");
-	}
+        var tl = new TimelineMax();
+        tl.add("anim1", "+=0.8").staggerFrom('.readyElem', 0.3, {opacity: 0, y: 100}, 0.1, "anim1");
+    }
 
 
 	showMore(event) {// добавляет по 2 эелементы
 
 		event.preventDefault();
-		var sort = this.more.elem.splice(0, this.muchAdd);
-		this.setState({
+
+        var sort = this.more.elem.splice(0, this.muchAdd);
+        this.setState({
 			count: this.state.count.concat(sort)
 		});
 
-	}
+
+
+    }
 
 	filter(el) {
 
@@ -133,6 +143,7 @@ class App extends Component {
 			}
 
 		});
+
 		this.setState({
 			count: filterElem
 		})
@@ -154,27 +165,61 @@ class App extends Component {
 	}
 
 
+	resetAnimClass(){
+
+		var muchAdd = this.muchAdd;
+
+        if($('.moreElem').length > muchAdd){
+            let limit = 0;
+            $('.moreElem').each(function () {
+
+                if(limit <  muchAdd){
+                    limit++;
+                    console.log($(this))
+                    $(this).addClass('readyElem');
+                    $(this).removeClass('moreElem')
+            	}
+            })
+        }
+	}
+
 	componentDidUpdate(){
 
+		this.resetAnimClass();
+
+        var tl = new TimelineMax();
+        tl.add("anim2", "+=0.1").staggerFrom('.moreElem', 0.3, {opacity: 0, y: 100}, 0.1, "anim2");
 	}
 
 	//Основной render  в компоненте
-
 	render() {
+        var animID = this.state.animID[0],
+			animID2 = this.state.animID[1],
+        	qualElem = this.qualElem,
+            limit = 0;
 
-		return (
+        return (
 			<div className="all_items text_center">
 				<div className="items_wrap">
 					<button className="button" onClick={this._handleClick} value="1">Category 1</button>
 					<button className="button" onClick={this._handleClick} value="2">Category 2</button>
 					<button className="button" onClick={this._handleClick} value="3">Category 3</button>
-					<button className="button" onClick={this._handleClick} value="all">all</button>
+					<button className="button active" onClick={this._handleClick} value="all">all</button>
 				</div>
 
 				<ul>
 					{
+
 						this.state.count.map(function (el) {
+                            if(qualElem  > limit){
+                            	limit++;
+
+                            }else{
+                                animID = animID2
+
+                            }
 							return <ItemsTmp
+								animID={animID}
 								key={el.id}
 								src={el.img}
 								url={el.url}
