@@ -8,7 +8,7 @@ class ItemsTmp extends Component {
 	render() {
 		return (
 			<li>
-				<a href={ this.props.url } className={this.props.animID + " tab_item"}>
+				<a href={ this.props.url } className={this.props.animID + " " + "tab_item"}>
 					<div className=" tab_item_cap">
 						<img className="tab_item_cap_img" src={ this.props.src }/>
 					</div>
@@ -50,12 +50,11 @@ class App extends Component {
 
 		this.state = {
 			count: json,
-            animID: ['readyElem','moreElem']
+            animID: ['readyElem','moreElem','categoryElem']
 		};
 		this.more = {elem: []};
 
-		this.didElem;
-		this.willElem;
+		this.categoryState = false;
 
 		this.filter = this.filter.bind(this);
 		this.showMore = this.showMore.bind(this);
@@ -99,14 +98,13 @@ class App extends Component {
 		this.readyAddItems();
 		this.jQueryEvents();
         var tl = new TimelineMax();
-        tl.add("anim1", "+=0.8").staggerFrom('.readyElem', 0.3, {opacity: 0, y: 100}, 0.1, "anim1");
+		tl.add("anim", "+=0.1").set('.readyElem',{opacity: 0, y: 100},"anim").staggerTo('.readyElem', 0.3, {opacity: 1, y: 0}, 0.1, "anim");
     }
 
 
 	showMore(event) {// добавляет по 2 эелементы
-
 		event.preventDefault();
-
+		this.categoryState = false;
         var sort = this.more.elem.splice(0, this.muchAdd);
         this.setState({
 			count: this.state.count.concat(sort)
@@ -147,15 +145,16 @@ class App extends Component {
 		this.setState({
 			count: filterElem
 		})
-
+		
 	}
 
+	
 	_handleClick(event) {
 		event.preventDefault();
 		var el = event.target;
 
 		this.filter(el);
-
+		this.categoryState = true;
 	}
 
 	inspectBnt() {
@@ -174,50 +173,69 @@ class App extends Component {
             $('.moreElem').each(function () {
 
                 if(limit <  muchAdd){
-                    limit++;
-                    console.log($(this))
+					limit++;
                     $(this).addClass('readyElem');
-                    $(this).removeClass('moreElem')
+                    $(this).removeClass('moreElem');
+
             	}
             })
         }
+
+		if($('.categoryElem').length > muchAdd) {
+			let limit = 0;
+			$('.categoryElem').each(function () {
+				if (limit < muchAdd) {
+					limit++;
+					$(this).addClass('readyElem');
+					$(this).removeClass('categoryElem');
+				}
+
+			})
+		}
 	}
 
 	componentDidUpdate(){
 
 		this.resetAnimClass();
+		
 
-        var tl = new TimelineMax();
-        tl.add("anim2", "+=0.1").staggerFrom('.moreElem', 0.3, {opacity: 0, y: 100}, 0.1, "anim2");
+		var tl1 = new TimelineMax();
+		var tl2 = new TimelineMax();
+		tl1.set('.moreElem',{opacity: 1, y: 0}).staggerFrom('.moreElem', 0.5, {opacity: 0, y: 100}, 0.1,'-=0.3');
+        tl2.set('.categoryElem',{opacity: 1, y: 0}).staggerFrom('.categoryElem', 0.5, {opacity: 0, y: 100}, 0.1);
 	}
 
 	//Основной render  в компоненте
 	render() {
         var animID = this.state.animID[0],
 			animID2 = this.state.animID[1],
+			animID3 = this.state.animID[2],
         	qualElem = this.qualElem,
-            limit = 0;
+            limit = 0,
+			categoryState = this.categoryState;
+
 
         return (
 			<div className="all_items text_center">
 				<div className="items_wrap">
-					<button className="button" onClick={this._handleClick} value="1">Category 1</button>
-					<button className="button" onClick={this._handleClick} value="2">Category 2</button>
-					<button className="button" onClick={this._handleClick} value="3">Category 3</button>
-					<button className="button active" onClick={this._handleClick} value="all">all</button>
+					<button className="button category" onClick={this._handleClick} value="1">Category 1</button>
+					<button className="button category" onClick={this._handleClick} value="2">Category 2</button>
+					<button className="button category" onClick={this._handleClick} value="3">Category 3</button>
+					<button className="button category active" onClick={this._handleClick} value="all">all</button>
 				</div>
 
 				<ul>
 					{
-
 						this.state.count.map(function (el) {
                             if(qualElem  > limit){
                             	limit++;
 
-                            }else{
-                                animID = animID2
-
-                            }
+                            } else{
+								animID = animID2
+							}
+							if(categoryState == true ){
+								animID = animID3
+							}
 							return <ItemsTmp
 								animID={animID}
 								key={el.id}
