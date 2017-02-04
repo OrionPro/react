@@ -59,7 +59,7 @@ class App extends Component {
 		this.filter = this.filter.bind(this);
 		this.showMore = this.showMore.bind(this);
 		this._handleClick = this._handleClick.bind(this);
-
+        this.search = this.search.bind(this);
 
 	}
 
@@ -205,6 +205,19 @@ class App extends Component {
         tl2.set('.categoryElem',{opacity: 1, y: 0}).staggerFrom('.categoryElem', 0.5, {opacity: 0, y: 100}, 0.1);
 	}
 
+
+	search(event){
+        var value = event.target.value.toLowerCase();
+        var name = json.filter(function(el) {
+            var searchValue = el.tab_item_name.toLowerCase();
+            return searchValue.indexOf(value) !== -1;
+        });
+
+        this.setState({
+            count: name
+        });
+    }
+
 	//Основной render  в компоненте
 	render() {
         var animID = this.state.animID[0],
@@ -217,6 +230,7 @@ class App extends Component {
 
         return (
 			<div className="all_items text_center">
+				<input id="search" type="text" onChange={this.search}/>
 				<div className="items_wrap">
 					<button className="button category" onClick={this._handleClick} value="1">Category 1</button>
 					<button className="button category" onClick={this._handleClick} value="2">Category 2</button>
