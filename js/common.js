@@ -1,8 +1,20 @@
 // подключение common.js
 
 $(document).ready( function (){
-	//привет
+	//
+	$('.input_search input').on('focus', function () {
+		$(this).siblings('label').addClass("is_focused");
+	});
+	$(".input_search input").on('blur', function () {
+		if ($(this).val() === "") {
+			$(this).siblings("label").removeClass("is_focused");
+		}
+		else if ($(this).val() !== "") {
+			$(this).siblings("label").addClass("is_focused");
+		}
 
+	});
+	
 	// для инициализации tooltips
 	// $( document ).tooltip({
 	//   track: true

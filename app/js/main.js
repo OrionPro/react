@@ -1,9 +1,19 @@
-"use strict";
+'use strict';
 
 // подключение common.js
 
 $(document).ready(function () {
-	//привет
+	//
+	$('.input_search input').on('focus', function () {
+		$(this).siblings('label').addClass("is_focused");
+	});
+	$(".input_search input").on('blur', function () {
+		if ($(this).val() === "") {
+			$(this).siblings("label").removeClass("is_focused");
+		} else if ($(this).val() !== "") {
+			$(this).siblings("label").addClass("is_focused");
+		}
+	});
 
 	// для инициализации tooltips
 	// $( document ).tooltip({
@@ -50,7 +60,6 @@ $(document).ready(function () {
 	//     // Parameters has to be in square bracket '[]'
 	//     owl.trigger('prev.owl.carousel', [700]);
 	// });
-
 
 });
 

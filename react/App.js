@@ -23,7 +23,7 @@ class ItemsTmp extends Component {
 						<div className="tab_item_details">
 							<span className="platform_img win"></span>
 							<div className="tab_item_top_tags">
-								<span	className="top_tag">{this.props.top_tag}</span>
+								<span className="top_tag">{this.props.top_tag}</span>
 							</div>
 						</div>
 					</div>
@@ -109,8 +109,6 @@ class App extends Component {
         this.setState({
 			count: this.state.count.concat(sort)
 		});
-
-
 
     }
 
@@ -230,12 +228,17 @@ class App extends Component {
 
         return (
 			<div className="all_items text_center">
-				<input id="search" type="text" onChange={this.search}/>
+
 				<div className="items_wrap">
 					<button className="button category" onClick={this._handleClick} value="1">Category 1</button>
 					<button className="button category" onClick={this._handleClick} value="2">Category 2</button>
 					<button className="button category" onClick={this._handleClick} value="3">Category 3</button>
 					<button className="button category active" onClick={this._handleClick} value="all">all</button>
+
+					<div className="input_search">
+						<label className="">Найти элемент</label>
+						<input id="search" type="text" placeholder="" onChange={this.search}/>
+					</div>
 				</div>
 
 				<ul>
