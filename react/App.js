@@ -156,9 +156,15 @@ class App extends Component {
 	}
 
 	inspectBnt() {
-		if (this.more.elem.length !== 0) {
-			return <button className="center-block button" onClick={this.showMore}>more</button>
-		} else  return <button className="center-block button">no items</button>
+		if($('.input_search input').is(':focus')) {
+			<button style={{display: 'none'}} className="center-block button"></button>
+		}
+		else {
+			if (this.more.elem.length !== 0) {
+				return <button className="center-block button" onClick={this.showMore}>more</button>
+			} else  return <button className="center-block button">no items</button>
+		}
+
 	}
 
 
@@ -205,11 +211,14 @@ class App extends Component {
 
 
 	search(event){
-        var value = event.target.value.toLowerCase();
-        var name = json.filter(function(el) {
-            var searchValue = el.tab_item_name.toLowerCase();
-            return searchValue.indexOf(value) !== -1;
-        });
+
+		var value = event.target.value.toLowerCase();
+
+		var name = json.filter(function(el) {
+			var searchValue = el.tab_item_name.toLowerCase();
+			return searchValue.indexOf(value) !== -1;
+
+		});
 
         this.setState({
             count: name
