@@ -527,6 +527,43 @@ label
 		
 		&:last-of-type
 			margin-right: 0
+	.input_search
+		display: inline-block
+		float: right
+	input
+		width: 300px
+		color: #fff
+		padding-left: 15px
+		border-color: rgba(0,0,0,.8)
+		background-color: transparent
+		transition: 0.5s
+		font-size: 18px
+		z-index: 2
+		position: relative
+		&:hover
+			border-color: rgba(255, 255, 251, 0.8)
+			outline: 0
+		&:active
+			border-color: rgba(255, 255, 251, 0.8)
+			outline: 0
+		&:focus
+			border-color: rgba(255, 255, 251, 0.8)
+			outline: 0
+
+	label
+		color: #c7d5e0
+		position: absolute
+		line-height: 2
+		padding-left: 15px
+		z-index: 0
+		font-size: 16px
+		transition: .2s ease-out
+		&.is_focused
+			font-size: 13px
+			-webkit-transform: translate(-14%,-120%)
+			-ms-transform: translate(-14%,-120%)
+			transform: translate(-14%,-120%)
+
 button.button
 	margin-bottom: 50px
 	color: #ffffff
