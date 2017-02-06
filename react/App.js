@@ -7,7 +7,7 @@ import json from '../app/json/items.json';
 class ItemsTmp extends Component {
     render() {
         return (
-            <li>
+            <li className="li">
                 <a href={ this.props.url } className={this.props.animID + " " + "tab_item"}>
                     <div className=" tab_item_cap">
                         <img className="tab_item_cap_img" src={ this.props.src }/>
@@ -60,6 +60,8 @@ class App extends Component {
         this.showMore = this.showMore.bind(this);
         this._handleClick = this._handleClick.bind(this);
         this.search = this.search.bind(this);
+        this.scrollElem = this.scrollElem.bind(this);
+        this.scrollAddElem = this.scrollAddElem.bind(this);
 
     }
 
@@ -93,15 +95,69 @@ class App extends Component {
         })
     }
 
+
+    scrollElem(arr){
+
+        var positionDoc = $('.all_items ul').offset().top, //Начало выводимых элементов
+            heightElem = $('.all_items ul .li').outerHeight(), // высота каждого элемента
+            heightDocument = $(window).height(), // высота всего документа
+            start = heightDocument - positionDoc, // до какого момента выводить элемента
+            step = parseInt(start / heightElem);
+
+
+        var more = this.more.elem;
+        if (arr.length > step) {
+            this.filterElem = arr.slice(0, step);
+
+            for (var i = 0; i < json.length; i++) {
+                if (i > (step - 1)) {
+                    more.push(arr[i])
+                }
+            }
+        } else this.filterElem = arr;
+
+
+        this.setState({
+            count: this.filterElem
+        })
+
+    }
+
+    scrollAddElem(pos){
+
+
+
+        if(pos > ($('#moreBtn').offset().top - $(window).height())){
+            var sort = this.more.elem.splice(0, this.muchAdd);
+
+            this.setState({
+                count: this.state.count.concat(sort)
+            });
+
+        }
+
+
+    }
+
     componentDidMount() {
 
-        this.readyAddItems();
+        //this.readyAddItems();
+        this.scrollElem(json);
         this.jQueryEvents();
         var tl = new TimelineMax();
         tl.add("anim", "+=0.1").set('.readyElem', {
             opacity: 0,
             y: 100
         }, "anim").staggerTo('.readyElem', 0.3, {opacity: 1, y: 0}, 0.1, "anim");
+
+
+        // вывод элементов при скролее
+
+
+        $(window).scroll(() => {
+            this.scrollAddElem($(window).scrollTop())
+        });
+        
     }
 
 
@@ -112,7 +168,7 @@ class App extends Component {
         this.setState({
             count: this.state.count.concat(sort)
         });
-
+        
     }
 
     filter(el) {
@@ -142,12 +198,6 @@ class App extends Component {
             }
 
         });
-
-        // json.reduce(function (prev, _this){
-        //     console.log(prev)
-        //    // console.log(_this)
-        //
-        // })
 
         this.setState({
             count: filterElem
@@ -199,8 +249,8 @@ class App extends Component {
 
     inspectBnt() {
         if (this.more.elem.length !== 0) {
-            return <button className="center-block button" onClick={this.showMore}>more</button>
-        } else  return <button className="center-block button">no items</button>
+            return <button id="moreBtn" className="center-block button" onClick={this.showMore}>more</button>
+        } else  return <button id="moreBtn" className="center-block button">no items</button>
 
 
     }
@@ -243,7 +293,7 @@ class App extends Component {
 
         var tl1 = new TimelineMax();
         var tl2 = new TimelineMax();
-        tl1.set('.moreElem', {opacity: 1, y: 0}).staggerFrom('.moreElem', 0.5, {opacity: 0, y: 100}, 0.1, '-=0.3');
+       // tl1.set('.moreElem', {opacity: 1, y: 0}).staggerFrom('.moreElem', 0.5, {opacity: 0, y: 100}, 0.1, '-=0.3');
         tl2.set('.categoryElem', {opacity: 1, y: 0}).staggerFrom('.categoryElem', 0.5, {opacity: 0, y: 100}, 0.1);
     }
 
