@@ -127,7 +127,7 @@ class App extends Component {
 
 
 
-        if(pos > ($('#moreBtn').offset().top - $(window).height())){
+        if(pos > ($('#moreBtn').offset().top - $(window).height() - 100)){
             var sort = this.more.elem.splice(0, this.muchAdd);
 
             this.setState({
