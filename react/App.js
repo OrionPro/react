@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 import json from '../app/json/items.json';
 // import axios from 'axios';
 
-class ItemsTmp extends Component {
 
+class ItemsTmp extends Component {
 	render() {
 		return (
 			<li className="li">
@@ -37,6 +37,7 @@ class ItemsTmp extends Component {
 
 class App extends Component {
 
+
 	constructor(props) {
 		super(props);
 
@@ -45,6 +46,7 @@ class App extends Component {
 
 		this.qualElem = quantity; // запись в переменную, которая будет доступна во всем классе
 		this.muchAdd = muchAdd; // запись в переменную, которая будет доступна во всем классе
+
 
 		this.state = {
 			count: json,
@@ -65,6 +67,7 @@ class App extends Component {
 
 	readyAddItems() {
 
+
 		var more = this.more.elem;
 		if (json.length > this.qualElem) {
 			this.filterElem = json.slice(0, this.qualElem);
@@ -76,9 +79,11 @@ class App extends Component {
 			}
 		} else this.filterElem = json;
 
+
 		this.setState({
 			count: this.filterElem
 		})
+
 
 	}
 
@@ -88,15 +93,18 @@ class App extends Component {
 			$('.button').removeClass("active");
 			$(this).addClass("active");
 		})
+		
 	}
 
-	scrollElem(arr) {
+
+	scrollElem(arr){
 
 		var positionDoc = $('.all_items ul').offset().top, //Начало выводимых элементов
 			heightElem = $('.all_items ul .li').outerHeight(), // высота каждого элемента
 			heightDocument = $(window).height(), // высота всего документа
 			start = heightDocument - positionDoc, // до какого момента выводить элемента
 			step = parseInt(start / heightElem);
+
 
 		var more = this.more.elem;
 		if (arr.length > step) {
@@ -109,13 +117,18 @@ class App extends Component {
 			}
 		} else this.filterElem = arr;
 
+
 		this.setState({
 			count: this.filterElem
 		})
+
 	}
 
-	scrollAddElem(pos) {
-		if (pos > ($('#moreBtn').offset().top - $(window).height() - 100)) {
+	scrollAddElem(pos){
+
+
+
+		if(pos > ($('#moreBtn').offset().top - $(window).height())){
 			var sort = this.more.elem.splice(0, this.muchAdd);
 
 			this.setState({
@@ -123,6 +136,7 @@ class App extends Component {
 			});
 
 		}
+
 
 	}
 
@@ -137,13 +151,16 @@ class App extends Component {
 			y: 100
 		}, "anim").staggerTo('.readyElem', 0.3, {opacity: 1, y: 0}, 0.1, "anim");
 
+
 		// вывод элементов при скролее
+
 
 		$(window).scroll(() => {
 			this.scrollAddElem($(window).scrollTop())
 		});
-
+		
 	}
+
 
 	showMore(event) {// добавляет по 2 эелементы
 		event.preventDefault();
@@ -152,6 +169,7 @@ class App extends Component {
 		this.setState({
 			count: this.state.count.concat(sort)
 		});
+		
 	}
 
 	filter(el) {
@@ -188,7 +206,11 @@ class App extends Component {
 
 	}
 
+
+
 	search(event) {
+
+
 
 		this.more.elem = [];
 		var value = event.target.value.toLowerCase(),
@@ -206,16 +228,17 @@ class App extends Component {
 			if (limit < this.qualElem) {
 				limit++;
 				searchArr.push(el)
-			} else {
+			}else{
 				this.more.elem.push(el)
 			}
 		});
 
 		this.setState({
-			count: searchArr
+			count:  searchArr
 		});
 
 	}
+
 
 	_handleClick(event) {
 		event.preventDefault();
@@ -230,7 +253,9 @@ class App extends Component {
 			return <button id="moreBtn" className="center-block button" onClick={this.showMore}>more</button>
 		} else  return <button id="moreBtn" className="center-block button">no items</button>
 
+
 	}
+
 
 	resetAnimClass() {
 
@@ -266,20 +291,23 @@ class App extends Component {
 
 		this.resetAnimClass();
 
+
 		var tl1 = new TimelineMax();
 		var tl2 = new TimelineMax();
-		// tl1.set('.moreElem', {opacity: 1, y: 0}).staggerFrom('.moreElem', 0.5, {opacity: 0, y: 100}, 0.1, '-=0.3');
+	   // tl1.set('.moreElem', {opacity: 1, y: 0}).staggerFrom('.moreElem', 0.5, {opacity: 0, y: 100}, 0.1, '-=0.3');
 		tl2.set('.categoryElem', {opacity: 1, y: 0}).staggerFrom('.categoryElem', 0.5, {opacity: 0, y: 100}, 0.1);
 	}
 
-	shouldComponentUpdate(nextProps, nextState) {
+
+	shouldComponentUpdate(nextProps, nextState){
 		// if(this.categoryState !== false){
-		return true
+		   return true
 		// } else {
 		//     return false
 		// }
 
 	}
+
 
 	//Основной render  в компоненте
 	render() {
@@ -289,6 +317,7 @@ class App extends Component {
 			qualElem = this.qualElem,
 			limit = 0,
 			categoryState = this.categoryState;
+
 
 		return (
 			<div className="all_items text_center">
