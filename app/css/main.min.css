@@ -1398,6 +1398,8 @@ nav[canvas]{top:20px;left:20px;z-index:100}
 .intermediate .intermediate_wrap .intermediate_item input:-ms-input-placeholder{color:#43637f}
 .intermediate .intermediate_wrap .intermediate_item input[type=submit]{background:#052243;color:#fff}
 .all_items ul .li{width:100%}
+.pagination-wrap{margin-top:33px;text-align:right}
+.pagination-wrap a{color:#fff}
 .footer{background-color:#333;height:200px;-webkit-box-flex:0;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto}
 @media only screen and (max-width:1200px){.header_modal{margin-top:20px}
 .intermediate .intermediate_wrap{margin-bottom:20px}

@@ -198,5 +198,15 @@
 		"final_price": "$9.99",
 		"tab_item_name": "Force Nature",
 		"top_tag": "Стратегия, Ролевая игра"
+	},
+	{
+		"id": "24",
+		"category": "1",
+		"img": "img/header(1).jpg",
+		"url": "",
+		"discount_pct": "",
+		"final_price": "$9.99",
+		"tab_item_name": "Force Nature",
+		"top_tag": "Стратегия, Ролевая игра"
 	}
 ]
